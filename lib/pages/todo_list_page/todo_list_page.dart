@@ -123,7 +123,7 @@ class _TodoListPageState extends State<TodoListPage> {
                           );
                         });
                       },
-                      title: Text("${_todos[index].text}\n${_todos[index].deadline}",
+                      title: Text("${_todos[index].text}${_todos[index].deadline == '' ? '' : "\n${_todos[index].deadline}"}",
                       style: !_todos[index].done ? themeData.textTheme.bodyLarge?.copyWith() : themeData.textTheme.bodyLarge?.copyWith(
                         color: const Color(0xFFD9D9D9),
                         decoration: TextDecoration.lineThrough,
