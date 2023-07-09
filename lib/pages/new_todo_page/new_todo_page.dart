@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 class NewTodoPage extends StatefulWidget {
   const NewTodoPage({super.key});
+
   @override
   State<NewTodoPage> createState() => _NewTodoPageState();
 }
@@ -23,7 +23,7 @@ class _NewTodoPageState extends State<NewTodoPage> {
       setState(() {
         selectedDate = picked;
         _checkDate = true;
-      } );
+      });
     } else {
       if (_checkDate != null) {
         _checkDate = false;
@@ -41,8 +41,12 @@ class _NewTodoPageState extends State<NewTodoPage> {
           alignment: Alignment.centerRight,
           child: IconButton(
             onPressed: () {
-              List<String> cache = [(_checkDate != null || _checkDate == true ?
-              '${selectedDate.year.toString()}.${selectedDate.month.toString()}.${selectedDate.day.toString()}'  : ''), _textController.text];
+              List<String> cache = [
+                (_checkDate != null || _checkDate == true
+                    ? '${selectedDate.year.toString()}.${selectedDate.month.toString()}.${selectedDate.day.toString()}'
+                    : ''),
+                _textController.text
+              ];
               Navigator.pop(context, cache);
             },
             icon: Text(
@@ -91,9 +95,7 @@ class _NewTodoPageState extends State<NewTodoPage> {
             CheckboxListTile(
               value: _checkDate != null || _checkDate == true,
               title: Text(
-                "Дедлайн\n${_checkDate != null || _checkDate == true ?
-                '${selectedDate.year.toString()}.${selectedDate.month.toString()}.${selectedDate.day.toString()}'  : ''}"
-                    ,
+                "Дедлайн${_checkDate != null || _checkDate == true ? '\n${selectedDate.year.toString()}.${selectedDate.month.toString()}.${selectedDate.day.toString()}' : ''}",
                 style: themeData.textTheme.bodyLarge?.copyWith(
                   fontWeight: FontWeight.w400,
                 ),
@@ -108,7 +110,6 @@ class _NewTodoPageState extends State<NewTodoPage> {
             ),
             IconButton(
               onPressed: () {
-
                 Navigator.pop(context);
               },
               icon: Row(
