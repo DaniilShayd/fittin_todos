@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../models/todo_model.dart';
 
 class NewTodoPage extends StatefulWidget {
-  NewTodoPage({super.key});
+  const NewTodoPage({super.key});
   @override
   State<NewTodoPage> createState() => _NewTodoPageState();
 }
@@ -42,10 +41,9 @@ class _NewTodoPageState extends State<NewTodoPage> {
           alignment: Alignment.centerRight,
           child: IconButton(
             onPressed: () {
-              List<String> _cache = ["${_checkDate != null || _checkDate == true ?
-              '${selectedDate.year.toString()}.${selectedDate.month.toString()}.${selectedDate.day.toString()}'  : ''}", _textController.text];
-              print(_cache);
-              Navigator.pop(context, _cache);
+              List<String> cache = [(_checkDate != null || _checkDate == true ?
+              '${selectedDate.year.toString()}.${selectedDate.month.toString()}.${selectedDate.day.toString()}'  : ''), _textController.text];
+              Navigator.pop(context, cache);
             },
             icon: Text(
               'Сохранить',
@@ -141,7 +139,6 @@ class _NewTodoPageState extends State<NewTodoPage> {
     );
   }
 
-  @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     throw UnimplementedError();
