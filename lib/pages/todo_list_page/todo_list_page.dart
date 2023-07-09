@@ -148,7 +148,7 @@ class _TodoListPageState extends State<TodoListPage> {
           final List<String> result = await Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => NewTodoPage(),
+                builder: (context) => const NewTodoPage(),
               ));
           setState(() {
             _todos.add(
