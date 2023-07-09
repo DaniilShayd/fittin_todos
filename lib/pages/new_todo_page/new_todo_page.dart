@@ -104,11 +104,11 @@ class _NewTodoPageState extends State<NewTodoPage> {
                 _selectDate(context);
               },
             ),
-            const Padding(
+            /*const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Divider(color: Color(0xFFD9D9D9)),
-            ),
-            IconButton(
+            ),*/
+            /*IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -133,7 +133,7 @@ class _NewTodoPageState extends State<NewTodoPage> {
                   ),
                 ],
               ),
-            ),
+            ),*/
           ],
         ),
       ),
