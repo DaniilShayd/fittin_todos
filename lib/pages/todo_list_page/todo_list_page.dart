@@ -140,10 +140,6 @@ class _TodoListPageState extends State<TodoListPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: ()
-            /* setState(() {
-            _todos.add(TodoModel(text: "text"),);
-          });
-        },*/
             async {
           final List<String> result = await Navigator.push(
               context,
