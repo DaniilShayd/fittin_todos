@@ -117,11 +117,7 @@ class _TodoListPageState extends State<TodoListPage> {
                       onChanged: (value) {
                         final checked = value ?? false;
                         setState(() {
-                          if (checked) {
-                            countAcsess++;
-                          } else {
-                            countAcsess--;
-                          }
+                          checked ? countAcsess++ : countAcsess--;
                           _todos[index] = _todos[index].copyWith(
                             done: checked,
                           );
